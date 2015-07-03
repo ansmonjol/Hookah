@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+	<strong>Title:</strong>
+	<%= @offer.title %>
+</p>
+
+<p>
+	<strong>Description:</strong>
+	<%= @offer.description %>
+</p>
+
+<p>
+	<strong>By:</strong>
+	<%= @offer.user.email %>
+</p> 
+
+<p>
+	<strong><%= link_to 'Apply', applies_path(@offer), :method => :post %></strong>
+</p>
+
+<%= link_to 'Edit', edit_offer_path(@offer) %> |
+<%= link_to 'Offers Page', offers_path %>

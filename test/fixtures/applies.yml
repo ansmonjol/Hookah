@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  created_ad: 2015-07-03 12:23:49
+  updated_at: 2015-07-03 12:23:49
+  offer_id: 1
+  user_id: 1
+  status: MyString
+
+two:
+  created_ad: 2015-07-03 12:23:49
+  updated_at: 2015-07-03 12:23:49
+  offer_id: 1
+  user_id: 1
+  status: MyString

@@ -1,0 +1,11 @@
+<h1>Hookah</h1>
+
+<p>Hookah is the best way to find a job in the jungle.</p>
+
+<% if current_user %>
+<%= link_to 'Offers page', offers_path %>
+<% else %>
+<p>You need to <%= link_to "Log in", new_user_session_path%> or <%= link_to "Sign up", new_user_registration_path%> before continuing.</p>
+<% end %>
+
+

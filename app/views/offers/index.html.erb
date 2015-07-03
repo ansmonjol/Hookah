@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Offers list :</h1>
+<!-- If offer in DB -->
+<% if @offers %>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Created at</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @offers.each do |offer| %>
+    <tr>
+      <td><%= offer.title %></td>
+      <td><%= offer.description %></td>
+      <td><%= offer.created_at %></td>
+      <td><%= offer.user.email %></td>
+      <td><%= link_to 'Show', offer %></td>
+      <!-- If user create the offer || if user is admin -->
+      <% if offer.user == current_user || current_user.admin %>
+      <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
+      <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @posts %>
+
+<br>
+<%= link_to 'New Offer', new_offer_path %>
+<!-- If no offer in DB -->
+<% else %> 
+<p>No offer yet, <%= link_to 'be the first', new_offer_path %></p>
+<% end %>
